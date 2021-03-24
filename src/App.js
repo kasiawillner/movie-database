@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Header from "./components/Header.js";
+import MovieItem from "./components/MovieItem";
+import movies from "./components/MovieDatabase.js";
+
+//let genreAsString = movies.genre.join(" ");
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div id="bg"></div>
+      <Header />
+      <section>
+        {movies.map((item, i) => (
+          <MovieItem
+            key={i}
+            rate={item.rate}
+            stars={"./components/img/stars.svg"}
+            title={item.title}
+            year={item.year}
+            director={item.director}
+            duration={item.duration}
+            genre={item.genre}
+          />
+        ))}
+      </section>
+      <footer></footer>
     </div>
   );
 }
