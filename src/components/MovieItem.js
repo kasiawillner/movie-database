@@ -5,7 +5,7 @@ const MovieItem = (props) => {
             <figcaption>
             <div>
             <p>{props.rate}</p>
-            <img src={props.stars}></img>
+            <img src={props.stars} alt="star icon"></img>
             </div>
             <ul>
                 <li>{props.year}</li>
